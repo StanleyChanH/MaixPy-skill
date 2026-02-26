@@ -4,6 +4,8 @@
 [![MaixPy](https://img.shields.io/badge/MaixPy-v4-green.svg)](https://github.com/sipeed/MaixPy)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-orange.svg)](https://claude.ai/code)
 
+**[English](README.md)** | **[简体中文](README_CN.md)**
+
 A comprehensive Claude Code skill for developing Python applications on Sipeed MaixCAM, MaixCAM-Pro, and MaixCAM2 edge AI devices using MaixPy v4.
 
 ## Features
