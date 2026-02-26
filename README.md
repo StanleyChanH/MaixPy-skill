@@ -95,7 +95,9 @@ maixpy-dev/
 │   ├── peripherals.md            # Hardware peripherals (UART, I2C, etc.)
 │   ├── network.md                # Network & streaming
 │   ├── audio.md                  # Audio playback/recording
-│   └── llm_vlm.md                # LLM/VLM integration (MaixCAM2)
+│   ├── llm_vlm.md                # LLM/VLM integration (MaixCAM2)
+│   ├── tracking.md               # Object tracking & counting
+│   └── patterns.md               # Common patterns (UI, threading, i18n)
 └── assets/
     ├── templates.py              # Application template
     └── app.yaml.template         # App configuration template

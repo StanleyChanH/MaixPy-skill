@@ -95,7 +95,9 @@ maixpy-dev/
 │   ├── peripherals.md            # 硬件外设（UART、I2C 等）
 │   ├── network.md                # 网络与流媒体
 │   ├── audio.md                  # 音频播放/录制
-│   └── llm_vlm.md                # LLM/VLM 集成（MaixCAM2）
+│   ├── llm_vlm.md                # LLM/VLM 集成（MaixCAM2）
+│   ├── tracking.md               # 目标追踪与计数
+│   └── patterns.md               # 常用模式（UI、多线程、国际化）
 └── assets/
     ├── templates.py              # 应用程序模板
     └── app.yaml.template         # 应用配置模板

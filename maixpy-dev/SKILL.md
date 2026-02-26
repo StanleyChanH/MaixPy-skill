@@ -9,6 +9,8 @@ description: |
   (4) Network applications (WiFi, HTTP streaming, MQTT, WebSocket)
   (5) Audio applications (playback, recording, TTS, ASR)
   (6) LLM/VLM integration (Qwen, DeepSeek on MaixCAM2)
+  (7) Object tracking and counting applications
+  (8) Touch screen UI and multi-threaded applications
   Trigger when user mentions MaixPy, MaixCAM, MaixCAM2, MaixCAM-Pro, Sipeed AI development, or embedded AI vision projects.
 ---
 
@@ -70,6 +72,10 @@ See [references/image_processing.md](references/image_processing.md) for complet
 
 See [references/ai_models.md](references/ai_models.md) for YOLO, classifier, face detection patterns.
 
+### Object Tracking
+
+See [references/tracking.md](references/tracking.md) for ByteTracker, counting, trajectory patterns.
+
 ### Peripherals (UART/I2C/SPI/GPIO)
 
 See [references/peripherals.md](references/peripherals.md) for hardware interface patterns.
@@ -86,18 +92,32 @@ See [references/audio.md](references/audio.md) for playback and recording.
 
 See [references/llm_vlm.md](references/llm_vlm.md) for Qwen and VLM usage.
 
+### Common Patterns
+
+See [references/patterns.md](references/patterns.md) for:
+- App structure template
+- Touch button handling
+- Back button pattern
+- Error handling
+- Multi-threading
+- State machine pattern
+- FPS calculation
+- i18n internationalization
+
 ## Device ID Detection
 
 ```python
 from maix import sys
 
 device_id = sys.device_id()  # "maixcam", "maixcam2", etc.
+device_name = sys.device_name()  # "MaixCAM", "MaixCAM2"
+
 if device_id == "maixcam2":
     # MaixCAM2 specific code
-    pass
+    model = "/root/models/yolo11s.mud"
 else:
     # MaixCAM/MaixCAM-Pro code
-    pass
+    model = "/root/models/yolov8n.mud"
 ```
 
 ## Model Paths
@@ -106,8 +126,38 @@ Pre-installed models are in `/root/models/`:
 - YOLOv8: `yolov8n.mud`
 - YOLO11: `yolo11n.mud`, `yolo11n_seg.mud`, `yolo11n_pose.mud`
 - Classifier: `mobilenetv2.mud`
-- Face: `face_det.mud`, `face_recog.mud`
+- Face: `yolov8n_face.mud`, `yolo11s_face.mud`, `retinaface.mud`
 - OCR: `pp_ocr.mud`
+- Hand: `hand_landmarks.mud`
+- Whisper: `whisper-base/whisper-base.mud`
+
+## App Development
+
+### App Structure
+```
+my_app/
+├── app.yaml          # App configuration
+├── main.py           # Entry point
+├── icon.png          # App icon (128x128)
+└── assets/           # Additional resources
+```
+
+### app.yaml Template
+```yaml
+id: my_app
+name: My Application
+name[zh]: 我的应用
+version: 1.0.0
+author: Your Name
+icon: icon.png
+desc: App description
+files:
+  - app.yaml
+  - main.py
+  - icon.png
+```
+
+See [assets/app.yaml.template](assets/app.yaml.template) for complete configuration options.
 
 ## Development Workflow
 
@@ -121,5 +171,6 @@ Pre-installed models are in `/root/models/`:
 - Official Docs: https://wiki.sipeed.com/maixpy/
 - API Reference: https://wiki.sipeed.com/maixpy/api/index.html
 - GitHub: https://github.com/sipeed/MaixPy
+- Example Projects: https://github.com/sipeed/MaixPy/tree/main/projects
 - MaixHub (online training): https://maixhub.com
 - Community: QQ群 862340358, t.me/maixpy

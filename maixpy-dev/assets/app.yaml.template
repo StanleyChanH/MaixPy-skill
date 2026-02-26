@@ -1,35 +1,90 @@
 # MaixPy Application Configuration
 # Place this file in your app directory alongside main.py
+#
+# Official documentation: https://wiki.sipeed.com/maixpy/doc/en/app_development/app_pack.html
 
-app:
-  name: "My App"              # Display name
-  version: "1.0.0"            # Version string
-  author: "Your Name"         # Author name
-  description: "App description"
+# Required: Unique application ID (lowercase, no spaces)
+id: my_app
 
-# Icon (optional, place icon.png in same directory)
-# icon: "icon.png"
+# Required: Display name
+name: My Application
+name[zh]: 我的应用
 
-# Entry point (default: main.py)
-# entry: "main.py"
+# Application version
+version: 1.0.0
 
-# Autostart options
-autostart: false              # Start on boot
-autostart_delay: 0            # Delay before starting (seconds)
+# Author information
+author: Your Name
 
-# Dependencies (optional)
-# dependencies:
-#   - numpy
-#   - opencv-python
+# Description (shown in app store)
+desc: A brief description of what this app does.
+desc[zh]: 应用的简短描述。
 
-# Permissions (optional)
+# Icon file (PNG recommended, 128x128 pixels)
+icon: icon.png
+
+# Files to include in the app package
+# Always include: app.yaml, main.py, and any assets
+files:
+  - app.yaml
+  - main.py
+  - icon.png
+  # - assets/
+  # - config.json
+
+# Category for app store (optional)
+# Options: vision, ai, tools, games, demo
+# category: vision
+
+# Autostart configuration
+autostart: false        # Start automatically on boot
+autostart_delay: 0      # Delay before starting (seconds)
+
+# Supported devices (optional, defaults to all)
+# devices:
+#   - maixcam
+#   - maixcam-pro
+#   - maixcam2
+
+# Minimum MaixPy version (optional)
+# min_version: 4.0.0
+
+# Required permissions (optional)
 # permissions:
 #   - camera
 #   - network
 #   - gpio
+#   - filesystem
 
-# Supported devices
-devices:
-  - maixcam
-  - maixcam-pro
-  - maixcam2
+# Python dependencies (optional, for advanced users)
+# These should be pre-installed or available via pip
+# dependencies:
+#   - numpy
+#   - opencv-python
+
+# App configuration parameters (optional)
+# Users can modify these in the settings UI
+# params:
+#   - name: threshold
+#     type: int
+#     default: 50
+#     min: 0
+#     max: 100
+#     desc: Detection threshold
+#   - name: enable_audio
+#     type: bool
+#     default: true
+#     desc: Enable audio feedback
+
+# Example complete app.yaml from official project:
+# id: face_recognizer
+# name: Face Recognizer
+# name[zh]: 人脸识别
+# version: 1.0.3
+# author: Sipeed Ltd
+# icon: face.png
+# desc: Learn and recognize face.
+# files:
+#   - face.png
+#   - app.yaml
+#   - main.py
