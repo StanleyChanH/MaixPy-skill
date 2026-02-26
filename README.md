@@ -12,10 +12,12 @@ A comprehensive Claude Code skill for developing Python applications on Sipeed M
 
 - **AI Vision**: YOLO detection, segmentation, pose estimation, classification, face recognition, OCR
 - **Image Processing**: Blob detection, edge detection, QR/barcode scanning, line tracking
-- **Hardware Peripherals**: Camera, display, UART, I2C, SPI, GPIO, PWM, ADC
+- **Object Tracking**: ByteTracker, counting, trajectory visualization
+- **Hardware Peripherals**: Camera, display, UART, I2C, SPI, GPIO, PWM, ADC, USB HID
 - **Network**: WiFi, HTTP streaming, MQTT, WebSocket, RTSP/RTMP
 - **Audio**: Playback, recording, TTS, ASR
 - **LLM/VLM**: Qwen, DeepSeek, InternVL (MaixCAM2 only)
+- **Advanced**: OpenCV integration, video encoding/decoding, self-learning classifier
 
 ## Supported Hardware
 
@@ -90,14 +92,15 @@ while not app.need_exit():
 maixpy-dev/
 ├── SKILL.md                      # Main skill definition
 ├── references/
-│   ├── ai_models.md              # AI/NN models reference
-│   ├── image_processing.md       # Image processing operations
-│   ├── peripherals.md            # Hardware peripherals (UART, I2C, etc.)
-│   ├── network.md                # Network & streaming
-│   ├── audio.md                  # Audio playback/recording
-│   ├── llm_vlm.md                # LLM/VLM integration (MaixCAM2)
-│   ├── tracking.md               # Object tracking & counting
-│   └── patterns.md               # Common patterns (UI, threading, i18n)
+│   ├── ai_models.md              # AI/NN models (YOLO, classifier, face, etc.)
+│   ├── image_processing.md       # Image operations (draw, find blobs, etc.)
+│   ├── peripherals.md            # UART, I2C, SPI, GPIO, PWM, ADC
+│   ├── network.md                # WiFi, HTTP, MQTT, WebSocket
+│   ├── audio.md                  # Playback, recording, TTS, ASR
+│   ├── llm_vlm.md                # Qwen, DeepSeek, InternVL (MaixCAM2)
+│   ├── tracking.md               # ByteTracker, counting, trajectories
+│   ├── patterns.md               # Touch buttons, threading, i18n, state machine
+│   └── advanced.md               # OpenCV, video, USB HID, RTSP, protocols
 └── assets/
     ├── templates.py              # Application template
     └── app.yaml.template         # App configuration template

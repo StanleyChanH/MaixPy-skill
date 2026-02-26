@@ -92,6 +92,22 @@ See [references/audio.md](references/audio.md) for playback and recording.
 
 See [references/llm_vlm.md](references/llm_vlm.md) for Qwen and VLM usage.
 
+### Object Tracking
+
+See [references/tracking.md](references/tracking.md) for ByteTracker, counting, trajectory patterns.
+
+### Advanced Features
+
+See [references/advanced.md](references/advanced.md) for:
+- OpenCV integration
+- Video encoding/decoding
+- USB HID (keyboard/mouse)
+- Communication protocol
+- Self-learning classifier
+- AI ISP configuration
+- RTSP streaming
+- Low-level NN forward
+
 ### Common Patterns
 
 See [references/patterns.md](references/patterns.md) for:

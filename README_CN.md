@@ -12,10 +12,12 @@
 
 - **AI 视觉**：YOLO 目标检测、图像分割、姿态估计、图像分类、人脸识别、OCR 文字识别
 - **图像处理**：色块检测、边缘检测、二维码/条码扫描、线条追踪
-- **硬件外设**：摄像头、显示屏、UART 串口、I2C、SPI、GPIO、PWM、ADC
+- **目标追踪**：ByteTracker 追踪器、计数、轨迹可视化
+- **硬件外设**：摄像头、显示屏、UART、I2C、SPI、GPIO、PWM、ADC、USB HID
 - **网络功能**：WiFi、HTTP 视频流、MQTT、WebSocket、RTSP/RTMP 推流
 - **音频功能**：音频播放、录制、TTS 语音合成、ASR 语音识别
 - **大语言模型**：Qwen、DeepSeek、InternVL 视觉语言模型（仅限 MaixCAM2）
+- **高级功能**：OpenCV 集成、视频编解码、自学习分类器
 
 ## 支持的硬件
 
@@ -90,14 +92,15 @@ while not app.need_exit():
 maixpy-dev/
 ├── SKILL.md                      # 主技能定义文件
 ├── references/
-│   ├── ai_models.md              # AI/NN 模型参考
-│   ├── image_processing.md       # 图像处理操作
-│   ├── peripherals.md            # 硬件外设（UART、I2C 等）
-│   ├── network.md                # 网络与流媒体
-│   ├── audio.md                  # 音频播放/录制
-│   ├── llm_vlm.md                # LLM/VLM 集成（MaixCAM2）
-│   ├── tracking.md               # 目标追踪与计数
-│   └── patterns.md               # 常用模式（UI、多线程、国际化）
+│   ├── ai_models.md              # AI/NN 模型（YOLO、分类、人脸等）
+│   ├── image_processing.md       # 图像操作（绘图、色块检测等）
+│   ├── peripherals.md            # UART、I2C、SPI、GPIO、PWM、ADC
+│   ├── network.md                # WiFi、HTTP、MQTT、WebSocket
+│   ├── audio.md                  # 播放、录制、TTS、ASR
+│   ├── llm_vlm.md                # Qwen、DeepSeek、InternVL（MaixCAM2）
+│   ├── tracking.md               # ByteTracker、计数、轨迹
+│   ├── patterns.md               # 触摸按钮、多线程、国际化、状态机
+│   └── advanced.md               # OpenCV、视频、USB HID、RTSP、协议
 └── assets/
     ├── templates.py              # 应用程序模板
     └── app.yaml.template         # 应用配置模板
