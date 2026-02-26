@@ -1,0 +1,35 @@
+# MaixPy Application Configuration
+# Place this file in your app directory alongside main.py
+
+app:
+  name: "My App"              # Display name
+  version: "1.0.0"            # Version string
+  author: "Your Name"         # Author name
+  description: "App description"
+
+# Icon (optional, place icon.png in same directory)
+# icon: "icon.png"
+
+# Entry point (default: main.py)
+# entry: "main.py"
+
+# Autostart options
+autostart: false              # Start on boot
+autostart_delay: 0            # Delay before starting (seconds)
+
+# Dependencies (optional)
+# dependencies:
+#   - numpy
+#   - opencv-python
+
+# Permissions (optional)
+# permissions:
+#   - camera
+#   - network
+#   - gpio
+
+# Supported devices
+devices:
+  - maixcam
+  - maixcam-pro
+  - maixcam2
