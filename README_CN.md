@@ -10,14 +10,16 @@
 
 ## 功能特性
 
-- **AI 视觉**：YOLO 目标检测、图像分割、姿态估计、图像分类、人脸识别、OCR 文字识别
-- **图像处理**：色块检测、边缘检测、二维码/条码扫描、线条追踪
-- **目标追踪**：ByteTracker 追踪器、计数、轨迹可视化
-- **硬件外设**：摄像头、显示屏、UART、I2C、SPI、GPIO、PWM、ADC、USB HID
-- **网络功能**：WiFi、HTTP 视频流、MQTT、WebSocket、RTSP/RTMP 推流
-- **音频功能**：音频播放、录制、TTS 语音合成、ASR 语音识别
-- **大语言模型**：Qwen、DeepSeek、InternVL 视觉语言模型（仅限 MaixCAM2）
-- **高级功能**：OpenCV 集成、视频编解码、自学习分类器
+| 类别 | 内容 |
+|------|------|
+| **AI 视觉** | YOLO 检测/分割/姿态、分类、人脸识别、OCR |
+| **图像处理** | 色块检测、边缘检测、二维码/条码、线条追踪 |
+| **目标追踪** | ByteTracker 追踪器、计数、轨迹可视化 |
+| **硬件外设** | 摄像头、显示屏、UART、I2C、SPI、GPIO、PWM、ADC、USB HID |
+| **网络功能** | WiFi、HTTP 流、MQTT、WebSocket、RTSP/RTMP |
+| **音频功能** | 播放、录制、TTS 语音合成、ASR 语音识别 |
+| **大语言模型** | Qwen、DeepSeek、InternVL（仅 MaixCAM2） |
+| **高级功能** | OpenCV 集成、视频编解码、自学习分类器、通信协议 |
 
 ## 支持的硬件
 
@@ -45,35 +47,32 @@ git clone https://github.com/StanleyChanH/MaixPy-skill.git
 cd MaixPy-skill
 ```
 
-将 `maixpy-dev.skill` 复制到技能目录，或直接使用源码。
-
 ## 使用方法
 
-安装完成后，当你提到以下内容时，技能会自动激活：
+当你提到以下内容时，技能会自动激活：
+- MaixPy 开发、MaixCAM/MaixCAM2
+- Sipeed AI 开发、嵌入式 AI 视觉项目
 
-- MaixPy 开发
-- MaixCAM / MaixCAM-Pro / MaixCAM2
-- Sipeed AI 开发
-- 嵌入式 AI 视觉项目
+## 参考文档
 
-### 示例提示词
+| 主题 | 文件 | 内容 |
+|------|------|------|
+| AI 模型 | [ai_models.md](maixpy-dev/references/ai_models.md) | YOLO、分类、人脸、OCR、姿态、分割 |
+| 图像处理 | [image_processing.md](maixpy-dev/references/image_processing.md) | 绘图、色块、边缘、二维码、变换 |
+| 外设 | [peripherals.md](maixpy-dev/references/peripherals.md) | UART、I2C、SPI、GPIO、PWM、ADC |
+| 网络 | [network.md](maixpy-dev/references/network.md) | WiFi、HTTP、MQTT、WebSocket |
+| 音频 | [audio.md](maixpy-dev/references/audio.md) | 播放、录制、TTS、ASR |
+| LLM/VLM | [llm_vlm.md](maixpy-dev/references/llm_vlm.md) | Qwen、DeepSeek、InternVL |
+| 追踪 | [tracking.md](maixpy-dev/references/tracking.md) | ByteTracker、计数、轨迹 |
+| 模式 | [patterns.md](maixpy-dev/references/patterns.md) | 触摸按钮、多线程、状态机、国际化 |
+| 高级 | [advanced.md](maixpy-dev/references/advanced.md) | OpenCV、视频、USB HID、RTSP、协议 |
 
-```
-"帮我在 MaixCAM 上创建一个 YOLO 目标检测应用"
-"如何在 MaixCAM2 上使用 UART 串口？"
-"用 MaixPy 创建一个二维码扫描器"
-"在 MaixCAM 上设置 HTTP 视频流"
-```
-
-## 快速入门示例
+## 快速入门
 
 ```python
 from maix import camera, display, image, nn, app
 
-# 初始化 YOLO 检测器
 detector = nn.YOLOv8(model="/root/models/yolov8n.mud", dual_buff=True)
-
-# 初始化摄像头和显示屏
 cam = camera.Camera(detector.input_width(), detector.input_height(), detector.input_format())
 disp = display.Display()
 
@@ -86,60 +85,32 @@ while not app.need_exit():
     disp.show(img)
 ```
 
-## 技能目录结构
-
-```
-maixpy-dev/
-├── SKILL.md                      # 主技能定义文件
-├── references/
-│   ├── ai_models.md              # AI/NN 模型（YOLO、分类、人脸等）
-│   ├── image_processing.md       # 图像操作（绘图、色块检测等）
-│   ├── peripherals.md            # UART、I2C、SPI、GPIO、PWM、ADC
-│   ├── network.md                # WiFi、HTTP、MQTT、WebSocket
-│   ├── audio.md                  # 播放、录制、TTS、ASR
-│   ├── llm_vlm.md                # Qwen、DeepSeek、InternVL（MaixCAM2）
-│   ├── tracking.md               # ByteTracker、计数、轨迹
-│   ├── patterns.md               # 触摸按钮、多线程、国际化、状态机
-│   └── advanced.md               # OpenCV、视频、USB HID、RTSP、协议
-└── assets/
-    ├── templates.py              # 应用程序模板
-    └── app.yaml.template         # 应用配置模板
-```
-
 ## 资源链接
 
 - [MaixPy 官方文档](https://wiki.sipeed.com/maixpy/)
 - [MaixPy API 参考](https://wiki.sipeed.com/maixpy/api/index.html)
 - [MaixPy GitHub](https://github.com/sipeed/MaixPy)
-- [MaixHub 在线 AI 训练平台](https://maixhub.com)
+- [MaixHub 在线训练](https://maixhub.com)
 - [MaixVision IDE](https://wiki.sipeed.com/zh/maixvision)
 
 ## 社区
 
 - QQ 群：862340358
 - Telegram：[t.me/maixpy](https://t.me/maixpy)
-- GitHub Issues：[MaixPy Issues](https://github.com/sipeed/maixpy/issues)
 
 ## 参与贡献
 
-欢迎参与贡献！请随时提交 Pull Request。
-
-1. Fork 本仓库
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 提交 Pull Request
+欢迎参与贡献！请提交 Pull Request。
 
 ## 开源许可
 
-本项目采用 MIT 许可证 - 详情请查看 [LICENSE](LICENSE) 文件。
+本项目采用 MIT 许可证 - 详情请查看 [LICENSE](LICENSE)。
 
 ## 致谢
 
-- [Sipeed](https://www.sipeed.com/) - 创建了 MaixPy 和 MaixCAM 系列
+- [Sipeed](https://www.sipeed.com/) - MaixPy 和 MaixCAM 系列
 - [MaixPy Project](https://github.com/sipeed/MaixPy) - 底层 SDK
-- [Anthropic](https://www.anthropic.com/) - Claude 和 Claude Code
 
 ---
 
-**注意**：本技能是非官方社区项目。如需官方 MaixPy 支持，请参考[官方文档](https://wiki.sipeed.com/maixpy/)。
+**注意**：本技能是非官方社区项目。官方支持请参考 [MaixPy 文档](https://wiki.sipeed.com/maixpy/)。
