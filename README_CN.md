@@ -1,5 +1,9 @@
 # MaixPy 开发技能
 
+<div align="center">
+  <img src="banner.png" alt="MaixPy Skill Banner" width="100%">
+</div>
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![MaixPy](https://img.shields.io/badge/MaixPy-v4-green.svg)](https://github.com/sipeed/MaixPy)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-orange.svg)](https://claude.ai/code)
